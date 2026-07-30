@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>AI秘書化計画（仮称）｜構成モック</title>
+<style>
+:root{
+  --bg:#f1f7fb; --bg2:#eaf3fa; --card:#ffffff;
+  --navy:#26405f; --navy2:#1d3149;
+  --pink:#cf8f9c; --pink2:#bd7886; --pinkbg:#fbeef1;
+  --blue:#7fb0d2; --text:#4a4446;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:"Yu Gothic","YuGothic","Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif;
+  background:var(--bg); color:var(--text); line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:720px; margin:0 auto; padding:0 20px;}
+section{padding:56px 0;}
+.mockbar{background:var(--navy2); color:#cfdcea; text-align:center; font-size:11px; padding:6px 12px; letter-spacing:.08em;}
+.hero{background:linear-gradient(180deg,var(--bg2),var(--bg)); text-align:center; padding:64px 0 56px;}
+.badge{display:inline-block; background:#fff; border:1px solid #d8e6f1; color:var(--navy); border-radius:999px; padding:6px 18px; font-size:13px; font-weight:700; letter-spacing:.1em; margin-bottom:18px;}
+h1{color:var(--navy2); font-size:clamp(30px,8vw,44px); line-height:1.4; letter-spacing:.02em;}
+h1 small{display:block; font-size:14px; color:#8a8286; font-weight:400; margin-top:6px; letter-spacing:.2em;}
+.tagline{margin-top:18px; font-size:clamp(15px,4vw,18px); color:var(--text);}
+.tagline b{color:var(--pink2);}
+.chips{margin-top:22px; display:flex; flex-wrap:wrap; gap:8px; justify-content:center;}
+.chip{background:#fff; border:1px solid #d8e6f1; color:var(--navy); border-radius:999px; padding:6px 14px; font-size:13px; font-weight:700;}
+h2{color:var(--navy2); font-size:clamp(22px,6vw,30px); line-height:1.5; margin-bottom:8px; text-align:center;}
+h2 .em{color:var(--pink2);}
+.seclead{text-align:center; font-size:14px; color:#8a8286; margin-bottom:28px;}
+.quote{background:#fff; border-left:5px solid var(--blue); border-radius:0 14px 14px 0; padding:16px 18px; margin-bottom:12px; font-size:14.5px; box-shadow:0 4px 16px rgba(38,64,95,.06);}
+.quote small{display:block; color:#9a9296; margin-top:6px; font-size:12px;}
+.cards{display:grid; gap:14px;}
+.card{background:#fff; border-radius:18px; padding:22px 22px; box-shadow:0 6px 24px rgba(38,64,95,.07);}
+.card h3{color:var(--navy); font-size:17px; margin-bottom:6px; line-height:1.6;}
+.card p{font-size:14px;}
+.card.pink{background:var(--pinkbg);}
+.promise .card{text-align:center;}
+.promise .num{display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:var(--pink2); color:#fff; font-weight:800; margin-bottom:10px;}
+.step{position:relative; padding-left:16px;}
+.step .card{margin-bottom:14px; position:relative;}
+.stepno{position:absolute; top:-10px; left:-10px; background:var(--navy); color:#fff; border-radius:10px; font-size:12px; font-weight:800; padding:4px 12px; letter-spacing:.08em;}
+.step .goal{margin-top:10px; background:var(--bg2); border-radius:10px; padding:8px 12px; font-size:13px; color:var(--navy);}
+.step .goal b{color:var(--pink2);}
+.meta{margin-top:8px; font-size:12px; color:#9aa0a6;}
+.flow{counter-reset:fl;}
+.flow .card{position:relative; padding-left:64px; margin-bottom:12px;}
+.flow .card::before{
+  counter-increment:fl; content:counter(fl);
+  position:absolute; left:18px; top:22px; width:32px; height:32px; border-radius:50%;
+  background:var(--pink2); color:#fff; font-weight:800; display:flex; align-items:center; justify-content:center;
+}
+table.tbl{width:100%; border-collapse:separate; border-spacing:0; background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 6px 24px rgba(38,64,95,.07);}
+table.tbl td{padding:14px 16px; font-size:14px; border-top:1px solid #eef2f6; vertical-align:top;}
+table.tbl tr:first-child td{border-top:none;}
+table.tbl td:first-child{font-weight:700; color:var(--navy); width:42%;}
+.price{background:var(--navy); border-radius:22px; color:#fff; text-align:center; padding:36px 24px;}
+.price .label{font-size:13px; letter-spacing:.2em; color:#cfdcea;}
+.price .yen{font-size:46px; font-weight:800; margin:6px 0;}
+.price .yen small{font-size:16px; font-weight:400;}
+.price p{font-size:13px; color:#cfdcea;}
+.vs{display:grid; gap:14px;}
+@media(min-width:640px){ .vs{grid-template-columns:1fr 1fr;} .promise{display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;} }
+details{background:#fff; border-radius:14px; margin-bottom:10px; box-shadow:0 4px 16px rgba(38,64,95,.06); overflow:hidden;}
+details summary{padding:16px 18px; font-weight:700; color:var(--navy); cursor:pointer; font-size:14.5px; list-style:none; position:relative; padding-right:40px;}
+details summary::after{content:"＋"; position:absolute; right:16px; top:14px; color:var(--pink2); font-weight:800;}
+details[open] summary::after{content:"−";}
+details .a{padding:0 18px 16px; font-size:14px;}
+.cta{background:linear-gradient(180deg,var(--pinkbg),var(--bg)); text-align:center;}
+.btn{
+  display:inline-block; background:var(--pink2); color:#fff; text-decoration:none;
+  border-radius:999px; padding:16px 44px; font-size:16px; font-weight:800; letter-spacing:.06em;
+  box-shadow:0 8px 24px rgba(189,120,134,.35); margin-top:18px;
+}
+.btn.sub{background:#fff; color:var(--navy); box-shadow:0 4px 14px rgba(38,64,95,.12); font-size:14px; padding:12px 32px;}
+footer{background:var(--navy2); color:#aebccb; text-align:center; font-size:11.5px; padding:28px 20px; line-height:2;}
+.divider{height:1px; background:#dbe8f2; margin:0 auto; max-width:720px;}
+</style>
+</head>
+<body>
+
+<div class="mockbar">構成モック（仮称・日程調整中）｜社外共有前にくみこ確認</div>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="badge">Re:che AI基礎プログラム</div>
+    <h1>AI秘書化計画<small>— AI HISHOKA KEIKAKU —</small></h1>
+    <p class="tagline">AIに使われる人にならない。<br>毎日の「めんどう」を任せられる<b>一生モノの秘書</b>を、<br>90日かけて自分の手で育てるプログラムです。</p>
+    <div class="chips">
+      <span class="chip">90日間</span>
+      <span class="chip">週1時間から</span>
+      <span class="chip">スマホ中心OK</span>
+      <span class="chip">初級の方に合わせた設計</span>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>このプログラムは、<br><span class="em">みなさんの声</span>から生まれました。</h2>
+    <p class="seclead">勉強会アンケート・約100名のご回答より</p>
+    <div class="quote">「何から始めればいいのか、わかりません」<small>つまずき第1位</small></div>
+    <div class="quote">「上級まで行きたい。でも、使える時間は週30分〜2時間です」<small>ご回答の大多数</small></div>
+    <div class="quote">「AIに使われるのではなく、使いこなせる人間になりたいです」<small>事前課題のご感想より</small></div>
+    <p style="margin-top:24px; font-size:15px;">やる気はある。時間はない。何からやればいいかわからない。<br>それなら必要なのは、たくさんの情報ではなく、<b style="color:var(--pink2);">「正しい順番」と「あなた専用の地図」</b>です。</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <h2>3つの約束</h2>
+    <p class="seclead">卒業するときの、あなたの状態です</p>
+    <div class="promise cards">
+      <div class="card"><span class="num">1</span><h3>任せ方がわかる</h3><p>任せてよいこと・いけないことを自分で仕分けられる。主導権はいつも自分に。</p></div>
+      <div class="card"><span class="num">2</span><h3>毎日の時短が現実になる</h3><p>献立・予定・説明文・リサーチ。小さな「めんどう」をAIに渡せるようになる。</p></div>
+      <div class="card"><span class="num">3</span><h3>「作れる私」になる</h3><p>卒業制作はアプリ2つ。自分のために1つ、大切な誰かのために1つ。</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <h2>90日の階段<span class="em">（7つのSTEP）</span></h2>
+    <p class="seclead">動画1本10分前後＋15分でできる宿題。カリキュラムサイトは今後も育ち続けます</p>
+    <div class="step">
+      <div class="card"><span class="stepno">STEP 0｜最初の3日</span>
+        <h3>じゅんび</h3>
+        <p>3つのAI（ChatGPT・Gemini・Claude）の無料アカウントを整えて、音声入力を設定。最後に「AIカルテ」を提出します。</p>
+        <div class="goal">ゴール：<b>あなた専用の90日ロードマップ</b>が手元に届く</div>
+      </div>
+      <div class="card"><span class="stepno">STEP 1｜1週目</span>
+        <h3>仕分け術 — 主導権のまもり方</h3>
+        <p>合言葉は「あなたが社長、AIは秘書」。3つの質問で、わが家の仕分け表を作ります。</p>
+        <div class="goal">ゴール：任せる範囲を<b>自分で決められる</b></div>
+      </div>
+      <div class="card"><span class="stepno">STEP 2｜2〜3週目</span>
+        <h3>頼み方5点セット</h3>
+        <p>役割・目的・材料・形・直す前提。一発で完璧を求めず、往復して育てる頼み方を練習します。</p>
+        <div class="goal">ゴール：同じお願いの<b>ビフォーアフター</b>を自分で再現できる</div>
+      </div>
+      <div class="card"><span class="stepno">STEP 3｜4週目</span>
+        <h3>3つのAIの使い分け</h3>
+        <p>おしゃべり万能のChatGPT、Google連携のGemini、じっくり型のClaude。課金の目安もここで整理します。</p>
+        <div class="goal">ゴール：迷わず<b>「この作業はこの子」</b>と選べる</div>
+      </div>
+      <div class="card"><span class="stepno">STEP 4｜5〜8週目</span>
+        <h3>時短レシピ12（暮らし編・仕事編）</h3>
+        <p>献立と買い物リスト・予定の整理・学校への文書・説明文の下書き・リサーチのたたき台・画像・在庫や売上の整理など。コピペで使えるテンプレ50本つき。</p>
+        <div class="goal">ゴール：<b>週2時間分</b>の「めんどう」をAIに渡せている</div>
+      </div>
+      <div class="card"><span class="stepno">STEP 5｜9〜10週目</span>
+        <h3>仕組み化入門</h3>
+        <p>よく使う頼み方を「マイテンプレ帳」に。GeminiとGoogleの連携、Cowork（作業ごと任せる使い方）の入門まで。</p>
+        <div class="goal">ゴール：毎回ゼロから頼まない。<b>自分の型</b>ができている</div>
+      </div>
+      <div class="card pink"><span class="stepno">STEP 6｜11〜13週目</span>
+        <h3>卒業制作 — マイアプリを2つ</h3>
+        <p>自分のためのアプリを1つ（例：献立表・在庫メモ・スケジュール帳）。そして、大切な誰かのためにもう1つ。発表会でお披露目します。</p>
+        <div class="goal">ゴール：<b>「AI、毎日使っているよ」</b>と言える私になる</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <h2>一人ひとり違うから、<br><span class="em">あなた専用カルテ</span>で進めます。</h2>
+    <p class="seclead">全員に同じ宿題を配る講座ではありません</p>
+    <div class="flow cards">
+      <div class="card"><h3>AIカルテを提出</h3><p>いまの悩み・やりたいこと・使える時間を10問で教えてください（スマホで3分）。</p></div>
+      <div class="card"><h3>くみこのAIが分析</h3><p>約100名の診断データで鍛えた仕組みが、あなたのつまずきと近道を読み解きます。</p></div>
+      <div class="card"><h3>90日ロードマップをお届け</h3><p>くみこ監修のうえで、「あなたはこの順番で」という専用の地図をお渡しします。</p></div>
+      <div class="card"><h3>月1回のグループ相談会</h3><p>進み具合に合わせて軌道修正。ほかの方の質問も、そのまま教材になります。</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <h2>含まれるもの</h2>
+    <table class="tbl">
+      <tr><td>ライブ講義　全4回</td><td>月1回・アーカイブつき。リアタイできなくて大丈夫です</td></tr>
+      <tr><td>カリキュラムサイト</td><td>STEP0〜6の動画とテンプレ。今後も追加され、育ち続けます</td></tr>
+      <tr><td>あなた専用カルテ</td><td>入会時＋卒業時の2回、専用ロードマップをお届け</td></tr>
+      <tr><td>頼み方テンプレ50本</td><td>暮らし編・仕事編。コピペしてそのまま使えます</td></tr>
+      <tr><td>オープンチャット</td><td>質問・成果シェアの場。期限なくご参加いただけます</td></tr>
+      <tr><td>卒業制作サポート</td><td>アプリ2つの完成まで伴走。発表会つき</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="price">
+      <div class="label">受講料</div>
+      <div class="yen">45,900<small>円（税込）</small></div>
+      <p>90日間＋オープンチャットは期限なし。<br>1日あたり約510円、週1時間からの設計です。</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <h2>向いている方・向いていない方</h2>
+    <div class="vs">
+      <div class="card pink"><h3>向いている方</h3><p>・週1時間、手を動かせる方<br>・家族との時間を増やしたい方<br>・学んだことを仕事や暮らしにすぐ使いたい方<br>・「作れる私」に憧れがある方</p></div>
+      <div class="card"><h3>向いていない方</h3><p>・見ているだけで変われると考えている方<br>・すべて自動でお金が増えると考えている方<br>・AIに人生の決断まで任せたい方</p></div>
+    </div>
+    <p style="margin-top:18px; font-size:14px; text-align:center;">主導権はいつも、あなたに持っていてほしいからです。</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="wrap">
+    <h2>よくあるご質問</h2>
+    <details><summary>スマホだけでも受講できますか？</summary><div class="a">STEP4まではスマホ中心で進められます。卒業制作はPCがあると理想ですが、スマホでの代替メニューもご用意します。</div></details>
+    <details><summary>AIは無料プランのままで大丈夫ですか？</summary><div class="a">基本は無料プランでOKです。毎日使うようになった段階で、必要な方にだけ課金の目安をお伝えします。</div></details>
+    <details><summary>初心者ですが、ついていけますか？</summary><div class="a">診断で「初級」だった方を基準に設計しています。さらに専用カルテで、一人ひとり順番を調整します。</div></details>
+    <details><summary>時間がとれるか不安です。</summary><div class="a">週1時間からの設計です。動画は1本10分前後、宿題は15分以内。アーカイブがあるので、ご自分のペースで進められます。</div></details>
+    <details><summary>物販以外にも役立ちますか？</summary><div class="a">はい。時短レシピは「暮らし編」と「仕事編」の2本立てです。献立・予定・学校の文書から、発信や家計の整理まで幅広く使えます。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>迷っている時間が、<br>いちばん<span class="em">もったいない。</span></h2>
+    <p style="font-size:14px; margin-top:10px;">ご質問・お申込みはLINEからどうぞ。</p>
+    <a class="btn" href="#">LINEで詳細を受け取る</a><br>
+    <a class="btn sub" href="#">質問してみる</a>
+  </div>
+</section>
+
+<footer>
+  ※本ページは構成案のモックです（名称は仮・日程は調整中）。<br>
+  掲載内容・特典・回数は正式リリース時に確定します。<br>
+  Merone｜Re:che
+</footer>
+
+</body>
+</html>
