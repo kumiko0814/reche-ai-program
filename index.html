@@ -157,6 +157,26 @@ details .a{padding:0 18px 16px 18px; font-size:13.5px; line-height:1.9;}
 
 footer{background:var(--navy2); color:#aebccb; text-align:center; font-size:11px; padding:26px 20px; line-height:2;}
 
+/* mypage phones */
+.phones{display:grid; gap:20px; margin-top:8px; justify-items:center;}
+@media(min-width:600px){ .phones{grid-template-columns:1fr 1fr;} }
+.phone{width:232px;}
+.plabel{text-align:center; font-size:12px; font-weight:800; color:var(--pink2); margin-bottom:8px;}
+.pscreen{border:7px solid var(--navy2); border-radius:26px; background:var(--bg); overflow:hidden; box-shadow:0 14px 30px rgba(38,64,95,.18);}
+.pshead{background:linear-gradient(150deg,#eaf3fa,#fbeef1); text-align:center; font-size:12px; font-weight:800; color:var(--navy2); padding:12px 8px 9px; line-height:1.5;}
+.pshead small{display:block; font-size:9px; color:var(--pink2); font-weight:800;}
+.psbody{padding:10px;}
+.psl{font-size:9px; font-weight:800; color:var(--navy); margin-bottom:4px;}
+.psta{background:#fff; border:1.5px solid #e3edf5; border-radius:9px; padding:7px 9px; font-size:9.5px; line-height:1.6; color:var(--navy2);}
+.pschips{display:flex; gap:5px; margin-top:7px;}
+.pschips span{border:1.5px solid #e3edf5; background:#fff; border-radius:999px; padding:3px 8px; font-size:8.5px; font-weight:800; color:var(--navy);}
+.pschips span.on{background:var(--pinkbg); border-color:var(--pink); color:var(--pink2);}
+.psbtn{margin-top:9px; background:linear-gradient(135deg,var(--pink2),var(--pink)); color:#fff; text-align:center; border-radius:999px; padding:8px; font-size:10px; font-weight:800;}
+.psadv{display:flex; gap:7px; background:#fff; border-radius:11px; padding:9px; box-shadow:0 3px 10px rgba(38,64,95,.08);}
+.psav{flex:none; width:22px; height:22px; border-radius:50%; background:linear-gradient(135deg,#f78ac0,var(--pink2)); color:#fff; font-size:10px; font-weight:800; display:flex; align-items:center; justify-content:center;}
+.psadv p{font-size:9.5px; line-height:1.7; color:var(--navy2); font-weight:600;}
+.demobtn{display:inline-block; background:var(--pink2); color:#fff; text-decoration:none; border-radius:999px; padding:13px 34px; font-size:14px; font-weight:800; box-shadow:0 8px 22px rgba(189,120,134,.35);}
+
 /* reveal */
 .rv{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
 .rv.on{opacity:1; transform:none;}
@@ -284,6 +304,44 @@ footer{background:var(--navy2); color:#aebccb; text-align:center; font-size:11px
       <div class="fcard"><h3>くみこのAIが分析</h3><p>約100名の診断データで鍛えた仕組みが、あなたのつまずきと近道を読み解きます。</p></div>
       <div class="fcard"><h3>専用ロードマップをお届け</h3><p>どこでつまずいているかを森川くみこが直接判断して、「あなたはこの順番で」という専用の地図をお渡しします。</p></div>
       <div class="fcard"><h3>オープンチャットで伴走</h3><p>質問・作ったもののお披露目の場。期限なく、卒業後もずっとご参加いただけます。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="altpink">
+  <div class="wrap rv">
+    <div class="eyebrow">MYPAGE</div>
+    <p class="sectitle">あなた専用の<span class="em">「AIカルテ」画面</span>があります。</p>
+    <p class="seclead">ご入会後、あなただけのURLをお渡しします</p>
+    <div class="secbody phones">
+      <div class="phone">
+        <div class="plabel">① あなたの画面に書くだけ</div>
+        <div class="pscreen">
+          <div class="pshead">AIカルテ<small>ゆきさんの専用ページ</small></div>
+          <div class="psbody">
+            <div class="psl">いま困っていること・感じていること</div>
+            <div class="psta">出品の説明文に毎回30分かかって、夜にはぐったりしています。何から始めれば…</div>
+            <div class="pschips"><span>ワクワク</span><span class="on">ちょっと不安</span><span>いそがしい</span></div>
+            <div class="psbtn">くみこに送る</div>
+          </div>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="plabel">② くみこからアドバイスが届く</div>
+        <div class="pscreen">
+          <div class="pshead">くみこからのアドバイス</div>
+          <div class="psbody">
+            <div class="psadv"><span class="psav">く</span>
+              <p>ゆきさん、まずは説明文だけAIに渡しましょう。あなたに合う相棒はClaudeです。今夜、テンプレ②で1本だけ。5分で終わります。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:22px; font-size:14px; text-align:center;">書いた悩みは、そのまま<b style="color:var(--pink2);">くみこの管理画面</b>に届きます。<br>「どんなAIとの付き合い方がよいか」「どのAIが合うか」を、一人ずつお返しします。</p>
+    <div style="text-align:center; margin-top:16px;">
+      <a class="demobtn" href="https://kumiko0814.github.io/ailabo-karte/?demo=1&name=%E3%83%87%E3%83%A2" target="_blank" rel="noopener">デモ画面をさわってみる</a>
+      <p style="font-size:11px; color:#9aa7b4; margin-top:8px;">※デモ画面です。ご入会後は専用URLをお渡しします。</p>
     </div>
   </div>
 </section>
