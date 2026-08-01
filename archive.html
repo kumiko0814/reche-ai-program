@@ -44,6 +44,14 @@ section.altpink{background:var(--pinkbg);}
 .bridge{background:var(--navy); color:#fff; border-radius:18px; padding:20px 22px; margin-top:30px; text-align:center; font-size:14.5px; line-height:2;}
 .bridge b{color:#f3cdd7;}
 
+/* 実例スクショ */
+.shots{margin-top:26px; columns:2 290px; column-gap:14px;}
+.shots img{width:100%; display:block; border-radius:14px; box-shadow:0 6px 18px rgba(38,64,95,.12); margin-bottom:14px; break-inside:avoid; border:1px solid #ede5f0; background:#fff;}
+.shotnote{font-size:11px; color:#9aa7b4; text-align:center; margin-top:2px;}
+.ghostbtn{display:inline-block; background:#fff; color:var(--navy); border:2px solid #cdd8e4; border-radius:999px; padding:12px 28px; font-size:13.5px; font-weight:800; text-decoration:none;}
+.sold{display:inline-block; background:#fff; border:1.5px solid #f0c9ce; border-radius:999px; padding:7px 20px; font-size:12.5px; font-weight:800; color:var(--navy2); margin-top:12px;}
+.sold b{color:var(--red);}
+
 /* LINE風の実例 */
 .chatwrap{margin-top:26px; display:flex; flex-direction:column; gap:14px;}
 .cb{display:flex; gap:10px; align-items:flex-start;}
@@ -93,6 +101,7 @@ footer a{color:#cfdcea; font-weight:700;}
       <b>公開は 8月3日（月）朝9:00 まで</b>
       <span class="cd" id="cd"></span>
     </div>
+    <div><span class="sold">すでに<b>60名以上</b>が参加しています／残り<b>30名</b>で締め切りです</span></div>
   </div>
 </div>
 
@@ -114,13 +123,18 @@ footer a{color:#cfdcea; font-weight:700;}
     <div class="eyebrow">REAL VOICE</div>
     <p class="sectitle">入会した<span class="em">その夜のうちに</span>、<br>AI初心者のママたちが初アプリを完成させました。</p>
     <p class="seclead">昨夜のオープンチャットより（一部・ご本人の言葉のまま）</p>
-    <div class="chatwrap">
-      <div class="cb"><span class="av">ま</span><div class="bd"><div class="nm">まゆこさん</div>初アプリです♪ くみこさんの魔法の言葉のおかげです。楽しすぎます！！<span class="app">はじめてのアプリ完成</span></div></div>
-      <div class="cb"><span class="av">と</span><div class="bd"><div class="nm">とみち子さん</div>子どもの習い事中、早速家計簿アプリを作りました！楽しすぎます。まだまだ改良していきたいと思います！<span class="app">かわいいキャラ付き家計簿</span></div></div>
-      <div class="cb"><span class="av">ゆ</span><div class="bd"><div class="nm">ゆうきさん</div>すごく簡単です！こんなに簡単だったなんて…笑。こんなに楽しく簡単に作れるなんて、わくわくしますね。<span class="app">毎日の記録アプリ</span></div></div>
-      <div class="cb"><span class="av">つ</span><div class="bd"><div class="nm">つくりさん</div>お店の候補とホームページから予約フォームまで。食べログやインスタからも調べられて、選択肢も多い。魔法の言葉すぎました。<span class="app">お店えらびアプリ</span></div></div>
-      <div class="cb"><span class="av">や</span><div class="bd"><div class="nm">やすはさん</div>英語学習サポートアプリつくれました♪<span class="app">えいご手帳</span></div></div>
-      <div class="cb"><span class="av">え</span><div class="bd"><div class="nm">えみこさん</div>お仕事のスレッズ投稿のお手伝いをしてもらえそうです。<span class="app">お仕事サポート</span></div></div>
+    <div class="shots">
+      <img src="voices/v1.png" alt="" loading="lazy">
+      <img src="voices/v2.png" alt="" loading="lazy">
+      <img src="voices/v3.png" alt="" loading="lazy">
+      <img src="voices/v4.png" alt="" loading="lazy">
+      <img src="voices/v5.png" alt="" loading="lazy">
+      <img src="voices/v6.png" alt="" loading="lazy">
+      <img src="voices/v7.png" alt="" loading="lazy">
+      <img src="voices/v8.png" alt="" loading="lazy">
+      <img src="voices/v9.png" alt="" loading="lazy">
+    </div>
+    <p class="shotnote">オープンチャットのスクリーンショットそのまま（作品リンクのみ加工しています）</p>お仕事のスレッズ投稿のお手伝いをしてもらえそうです。<span class="app">お仕事サポート</span></div></div>
     </div>
     <div class="kids">全員、昨日までプログラミング経験ゼロのAI初心者です。<br><b>「これは子どももハマりそう」</b>——お子さんと一緒に、遊ぶように学び始めています。</div>
   </div>
@@ -147,14 +161,20 @@ footer a{color:#cfdcea; font-weight:700;}
       <div class="card"><h3>最終ミッション</h3><p>自分用に1つ、身近な人用に1つ。アプリ2つの完成までサポートします。</p></div>
       <div class="card"><h3>ぜんぶ無期限<span class="bdg">ずっと使える</span></h3><p>AIカルテも、AI分析も、オープンチャットも<b style="color:var(--pink2);">期限なし</b>。卒業後もずっとあなたのそばにあります。</p></div>
     </div>
+    <p style="text-align:center; margin-top:22px;">
+      <a class="ghostbtn" href="https://kumiko0814.github.io/reche-ai-program/" target="_blank" rel="noopener">カリキュラムなど、くわしい内容を見る →</a>
+    </p>
+    <p style="font-size:11.5px; color:#9aa7b4; text-align:center; margin-top:8px;">7つのSTEP・卒業時の姿・よくあるご質問まで、すべて載っています。</p>
+
     <div class="price">
       <div class="label">受講料</div>
       <div class="yen">45,900<small>円（税込）</small></div>
       <div><span class="bank">銀行振込の場合：43,500円（税込）</span></div>
       <p class="dl">お申込みは 8月3日（月）まで。以降の募集はありません。</p>
+      <p style="font-size:13px; color:#e6edf5; margin-top:6px;">すでに60名以上が参加。<b style="color:#ffb3ab;">残り30名</b>で締め切りです。</p>
     </div>
     <div style="text-align:center; margin-top:26px;">
-      <a class="ctabtn" href="https://kumiko0814.github.io/merone-ai-labo/"><small>一般募集なし・8/3（月）締切</small><span class="strike">100名</span>残り40名！AIらぼに申込む</a>
+      <a class="ctabtn" href="https://kumiko0814.github.io/merone-ai-labo/"><small>一般募集なし・8/3（月）締切</small><span class="strike">100名</span>残り30名！AIらぼに申込む</a>
       <p style="font-size:12px; color:#9a8f93; margin-top:12px;">迷っていることがあれば、<a href="https://kumiko0814.github.io/ailabo-faq/" target="_blank" rel="noopener" style="color:var(--pink2); font-weight:800;">よくあるご質問</a>をどうぞ。</p>
     </div>
   </div>
@@ -162,7 +182,7 @@ footer a{color:#cfdcea; font-weight:700;}
 
 <footer>Merone AI活用ラボ｜<a href="https://kumiko0814.github.io/ailabo-faq/" target="_blank" rel="noopener">よくあるご質問</a></footer>
 
-<div id="ctaFix"><a class="ctabtn" href="https://kumiko0814.github.io/merone-ai-labo/"><span class="strike">100名</span>残り40名！AIらぼに申込む</a></div>
+<div id="ctaFix"><a class="ctabtn" href="https://kumiko0814.github.io/merone-ai-labo/"><span class="strike">100名</span>残り30名！AIらぼに申込む</a></div>
 
 <script>
 /* ▼YouTubeの動画ID（URLのv=以降）をここに入れるだけで表示されます */
