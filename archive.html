@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>AI勉強会アーカイブ｜Merone AI活用ラボ</title>
+<style>
+:root{
+  --bg:#f6f1f9; --navy:#26405f; --navy2:#1d3149;
+  --pink:#cf8f9c; --pink2:#bd7886; --pinkbg:#fbeef1;
+  --blue:#8f9fd8; --text:#4a4446; --red:#c62828;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif; background:#fff; color:var(--text); line-height:2; -webkit-font-smoothing:antialiased; overflow-x:hidden; padding-bottom:76px;}
+.wrap{max-width:680px; margin:0 auto; padding:0 20px;}
+header.site{background:var(--navy2); color:#fff; padding:12px 18px; text-align:center;}
+header.site .lg{font-size:13px; font-weight:800; letter-spacing:.14em; color:#f3cdd7;}
+header.site .lg i{font-style:normal; color:#cfdcea; font-weight:700; margin-left:6px; letter-spacing:.08em;}
+
+.hero{background:linear-gradient(168deg,#f1eaf7 0%,#faf7fb 46%,#fbeef1 100%); text-align:center; padding:40px 0 34px;}
+.hero .chip{display:inline-block; background:var(--navy); color:#fff; border-radius:999px; padding:6px 20px; font-size:12px; font-weight:700; letter-spacing:.14em; margin-bottom:14px;}
+.hero h1{color:var(--navy2); font-size:clamp(24px,6.6vw,34px); line-height:1.5; font-weight:800;}
+.hero h1 .em{color:var(--pink2);}
+.hero p.l{font-size:13.5px; margin-top:10px;}
+.deadline{margin-top:16px; display:inline-block; background:#fff; border:1.5px solid #f0c9ce; border-radius:14px; padding:10px 22px;}
+.deadline b{color:var(--red); font-size:15px; font-weight:800;}
+.deadline .cd{display:block; font-size:12.5px; color:var(--navy2); font-weight:800; margin-top:2px;}
+
+section{padding:52px 0;}
+section.alt{background:var(--bg);}
+section.altpink{background:var(--pinkbg);}
+.eyebrow{text-align:center; font-size:clamp(20px,5.4vw,26px); letter-spacing:.2em; color:var(--navy2); font-weight:800;}
+.eyebrow::after{content:""; display:block; width:52px; height:4px; border-radius:2px; margin:12px auto 0; background:linear-gradient(90deg,var(--pink2),var(--blue));}
+.sectitle{text-align:center; font-size:clamp(17px,4.8vw,22px); color:var(--navy2); font-weight:800; line-height:1.8; margin-top:16px;}
+.sectitle .em{color:var(--pink2);}
+.seclead{text-align:center; font-size:12.5px; color:#8a97a5; margin-top:6px;}
+
+.vd{position:relative; width:100%; aspect-ratio:16/9; background:#1d3149; border-radius:18px; overflow:hidden; box-shadow:0 12px 34px rgba(38,64,95,.18); margin-top:24px;}
+.vd iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+.vd .prep{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#cfdcea; font-size:14px; font-weight:700; gap:8px;}
+.vnote{font-size:12px; color:#8a97a5; text-align:center; margin-top:10px;}
+
+.bridge{background:var(--navy); color:#fff; border-radius:18px; padding:20px 22px; margin-top:30px; text-align:center; font-size:14.5px; line-height:2;}
+.bridge b{color:#f3cdd7;}
+
+/* LINE風の実例 */
+.chatwrap{margin-top:26px; display:flex; flex-direction:column; gap:14px;}
+.cb{display:flex; gap:10px; align-items:flex-start;}
+.cb .av{flex:none; width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,#e8d9f0,#f7dee5); color:var(--navy2); font-size:12px; font-weight:800; display:flex; align-items:center; justify-content:center;}
+.cb .bd{background:#fff; border-radius:4px 16px 16px 16px; padding:12px 16px; font-size:13.5px; line-height:1.9; box-shadow:0 4px 14px rgba(38,64,95,.08); max-width:86%;}
+.cb .bd .nm{font-size:11px; color:#9aa7b4; font-weight:800; margin-bottom:2px;}
+.cb .bd .app{display:inline-block; background:var(--pinkbg); color:var(--pink2); border-radius:999px; padding:2px 12px; font-size:11px; font-weight:800; margin-top:6px;}
+.kids{background:#fff; border:1.5px solid #f0d9df; border-radius:18px; padding:18px 20px; margin-top:22px; text-align:center; font-size:14px; line-height:2;}
+.kids b{color:var(--pink2);}
+
+.cards{display:grid; gap:12px; margin-top:24px;}
+@media(min-width:600px){ .cards{grid-template-columns:1fr 1fr;} }
+.card{background:#fff; border-radius:16px; padding:18px 18px; box-shadow:0 6px 20px rgba(38,64,95,.07);}
+.card h3{color:var(--navy2); font-size:15px; margin-bottom:4px; line-height:1.6;}
+.card p{font-size:13px; line-height:1.9;}
+.card h3 .bdg{display:inline-block; background:var(--pink2); color:#fff; font-size:10px; padding:2px 10px; border-radius:999px; margin-left:6px; vertical-align:middle;}
+
+.price{background:linear-gradient(150deg,var(--navy2),var(--navy)); color:#fff; border-radius:22px; padding:30px 22px; text-align:center; margin-top:26px;}
+.price .label{font-size:12px; letter-spacing:.2em; color:#cfdcea; font-weight:800;}
+.price .yen{font-size:clamp(38px,9vw,52px); font-weight:800; margin-top:4px;}
+.price .yen small{font-size:.4em; font-weight:700;}
+.price .bank{display:inline-block; background:rgba(255,255,255,.12); border:1px solid rgba(243,205,215,.5); border-radius:12px; padding:8px 20px; font-size:14px; font-weight:800; color:#f3cdd7; margin-top:10px;}
+.price .dl{color:#ffb3ab; font-weight:800; font-size:14px; margin-top:12px;}
+
+.ctabtn{display:inline-block; background:linear-gradient(135deg,#c76e85,#cf8f9c); color:#fff; text-decoration:none; border-radius:999px; padding:17px 38px; font-size:16px; font-weight:800; letter-spacing:.03em; box-shadow:0 12px 30px rgba(189,120,134,.42);}
+.ctabtn small{display:block; font-size:10.5px; font-weight:700; letter-spacing:.14em; opacity:.9; margin-bottom:2px;}
+.ctabtn .strike{text-decoration:line-through; text-decoration-thickness:2.5px; opacity:.72; margin-right:5px; font-size:.86em;}
+#ctaFix{position:fixed; left:50%; transform:translateX(-50%); bottom:14px; z-index:55; width:max-content; max-width:calc(100% - 24px);}
+#ctaFix .ctabtn{padding:13px 30px; font-size:14px; white-space:nowrap;}
+@media(max-width:600px){ #ctaFix{width:calc(100% - 24px);} #ctaFix .ctabtn{display:block; text-align:center; padding:14px 8px;} }
+
+footer{background:var(--navy2); color:#8fa3b8; text-align:center; font-size:11px; padding:20px; letter-spacing:.08em;}
+footer a{color:#cfdcea; font-weight:700;}
+#expired{display:none; background:var(--pinkbg); border-radius:16px; padding:20px; text-align:center; font-size:14px; font-weight:700; color:var(--navy2); margin-top:22px;}
+</style>
+</head>
+<body>
+
+<header class="site"><span class="lg">Merone<i>AI活用ラボ</i></span></header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="chip">アーカイブ限定公開</div>
+    <h1>7/31 AI勉強会<br><span class="em">アーカイブ配信</span></h1>
+    <p class="l">ご参加・ご視聴、ありがとうございます。<br>当日の内容を、2本に分けてお届けします。</p>
+    <div class="deadline">
+      <b>公開は 8月3日（月）朝9:00 まで</b>
+      <span class="cd" id="cd"></span>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">MOVIE 1</div>
+    <p class="sectitle">勉強会 本編</p>
+    <p class="seclead">「AIの頼み方」が変わる90分です。まずはこちらから</p>
+    <div class="vd" id="v1box"><div class="prep">動画を準備しています。少しだけお待ちください。</div></div>
+    <p class="vnote">音が出ます。イヤホンがあると集中できます。</p>
+    <div id="expired">アーカイブの公開は終了しました。お申込みは下のボタンから、8/3（月）中まで受け付けています。</div>
+
+    <div class="bridge">ここまで見てくださったあなたに、<br><b>昨夜、実際に起きたこと</b>をお見せします。</div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">REAL VOICE</div>
+    <p class="sectitle">入会した<span class="em">その夜のうちに</span>、<br>AI初心者のママたちが初アプリを完成させました。</p>
+    <p class="seclead">昨夜のオープンチャットより（一部・ご本人の言葉のまま）</p>
+    <div class="chatwrap">
+      <div class="cb"><span class="av">ま</span><div class="bd"><div class="nm">まゆこさん</div>初アプリです♪ くみこさんの魔法の言葉のおかげです。楽しすぎます！！<span class="app">はじめてのアプリ完成</span></div></div>
+      <div class="cb"><span class="av">と</span><div class="bd"><div class="nm">とみち子さん</div>子どもの習い事中、早速家計簿アプリを作りました！楽しすぎます。まだまだ改良していきたいと思います！<span class="app">かわいいキャラ付き家計簿</span></div></div>
+      <div class="cb"><span class="av">ゆ</span><div class="bd"><div class="nm">ゆうきさん</div>すごく簡単です！こんなに簡単だったなんて…笑。こんなに楽しく簡単に作れるなんて、わくわくしますね。<span class="app">毎日の記録アプリ</span></div></div>
+      <div class="cb"><span class="av">つ</span><div class="bd"><div class="nm">つくりさん</div>お店の候補とホームページから予約フォームまで。食べログやインスタからも調べられて、選択肢も多い。魔法の言葉すぎました。<span class="app">お店えらびアプリ</span></div></div>
+      <div class="cb"><span class="av">や</span><div class="bd"><div class="nm">やすはさん</div>英語学習サポートアプリつくれました♪<span class="app">えいご手帳</span></div></div>
+      <div class="cb"><span class="av">え</span><div class="bd"><div class="nm">えみこさん</div>お仕事のスレッズ投稿のお手伝いをしてもらえそうです。<span class="app">お仕事サポート</span></div></div>
+    </div>
+    <div class="kids">全員、昨日までプログラミング経験ゼロのAI初心者です。<br><b>「これは子どももハマりそう」</b>——お子さんと一緒に、遊ぶように学び始めています。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">MOVIE 2</div>
+    <p class="sectitle">Merone AI活用ラボの<span class="em">ご案内</span></p>
+    <p class="seclead">くみこから直接、ラボの中身をお話しします（短い動画です）</p>
+    <div class="vd" id="v2box"><div class="prep">動画を準備しています。少しだけお待ちください。</div></div>
+  </div>
+</section>
+
+<section class="altpink">
+  <div class="wrap">
+    <div class="eyebrow">LABO</div>
+    <p class="sectitle">ラボに入ると、<span class="em">この環境が待っています。</span></p>
+    <div class="cards">
+      <div class="card"><h3>あなた専用AIカルテ<span class="bdg">稼働中</span></h3><p>毎日でも悩みを送れる専用ページ。くみこが直接お返しし、悩みの傾向・思考のくせまで自動分析します。</p></div>
+      <div class="card"><h3>AIくみこ（24時間）</h3><p>くみこの考え方を学習したAIチャットが、カルテ画面の右下に常駐。夜中でも相談できます。</p></div>
+      <div class="card"><h3>勉強会 全3回</h3><p>8/11（火）・8/16（日）・8/28（金）。すべてアーカイブつきで、リアタイできなくても大丈夫です。</p></div>
+      <div class="card"><h3>最終ミッション＋オープンチャット</h3><p>アプリ2つ完成で卒業。作ったものを披露し合うオープンチャットは、期限なくずっと使えます。</p></div>
+    </div>
+    <div class="price">
+      <div class="label">受講料</div>
+      <div class="yen">45,900<small>円（税込）</small></div>
+      <div><span class="bank">銀行振込の場合：43,500円（税込）</span></div>
+      <p class="dl">お申込みは 8月3日（月）まで。以降の募集はありません。</p>
+    </div>
+    <div style="text-align:center; margin-top:26px;">
+      <a class="ctabtn" href="https://kumiko0814.github.io/merone-ai-labo/"><small>一般募集なし・8/3（月）締切</small><span class="strike">100名</span>残り40名！AIらぼに申込む</a>
+      <p style="font-size:12px; color:#9a8f93; margin-top:12px;">迷っていることがあれば、<a href="https://kumiko0814.github.io/ailabo-faq/" target="_blank" rel="noopener" style="color:var(--pink2); font-weight:800;">よくあるご質問</a>をどうぞ。</p>
+    </div>
+  </div>
+</section>
+
+<footer>Merone AI活用ラボ｜<a href="https://kumiko0814.github.io/ailabo-faq/" target="_blank" rel="noopener">よくあるご質問</a></footer>
+
+<div id="ctaFix"><a class="ctabtn" href="https://kumiko0814.github.io/merone-ai-labo/"><span class="strike">100名</span>残り40名！AIらぼに申込む</a></div>
+
+<script>
+/* ▼YouTubeの動画ID（URLのv=以降）をここに入れるだけで表示されます */
+var VIDEO1="";  // 勉強会 本編
+var VIDEO2="";  // サービス案内
+(function(){
+  function mount(id,box){
+    if(!id) return;
+    var el=document.getElementById(box);
+    el.innerHTML='<iframe src="https://www.youtube.com/embed/'+id+'?rel=0" title="動画" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+  }
+  var END=new Date("2026-08-03T09:00:00+09:00").getTime();
+  function fmt(ms){
+    var m=Math.floor(ms/60000), d=Math.floor(m/1440), h=Math.floor((m%1440)/60), mm=m%60;
+    return (d>0?("あと"+d+"日と"+h+"時間"+mm+"分"):("あと"+h+"時間"+mm+"分"))+" 見られます";
+  }
+  function tick(){
+    var left=END-Date.now();
+    var cd=document.getElementById("cd");
+    if(left<=0){
+      cd.textContent="アーカイブの公開は終了しました";
+      document.getElementById("v1box").style.display="none";
+      document.getElementById("v2box").style.display="none";
+      document.getElementById("expired").style.display="block";
+      return;
+    }
+    cd.textContent=fmt(left);
+    setTimeout(tick,30000);
+  }
+  mount(VIDEO1,"v1box"); mount(VIDEO2,"v2box");
+  tick();
+})();
+</script>
+
+<!-- バグ報告ツール -->
+<style>
+#bugL{position:fixed; left:12px; bottom:78px; z-index:59; background:rgba(255,255,255,.92); border:1px solid #dfe7ee; color:#8a97a5; font-size:10.5px; font-weight:800; border-radius:999px; padding:5px 12px; cursor:pointer; letter-spacing:.04em;}
+#bugM{position:fixed; inset:0; background:rgba(29,49,73,.55); display:none; align-items:center; justify-content:center; z-index:70; padding:24px;}
+#bugM.on{display:flex;}
+#bugM .bx{background:#fff; border-radius:20px; padding:22px 20px; max-width:360px; width:100%;}
+#bugM h3{font-size:14.5px; color:#1d3149; margin-bottom:8px;}
+#bugM textarea{width:100%; border:1.5px solid #e3e9f0; border-radius:12px; padding:11px 13px; font-size:14px; line-height:1.8; color:#1d3149; font-family:inherit; min-height:100px; resize:vertical;}
+#bugM .bb{display:flex; gap:8px; margin-top:12px;}
+#bugM button{flex:1; border:none; border-radius:999px; padding:11px; font-size:13px; font-weight:800; cursor:pointer; font-family:inherit;}
+#bugM .s{background:linear-gradient(135deg,#c76e85,#cf8f9c); color:#fff;}
+#bugM .c{background:#eef2f6; color:#26405f;}
+#bugM .done{display:none; font-size:12.5px; color:#bd7886; font-weight:800; margin-top:8px; text-align:center;}
+</style>
+<div id="bugL">不具合を報告</div>
+<div id="bugM"><div class="bx">
+  <h3>不具合・気になったことを教えてください</h3>
+  <textarea id="bugT" placeholder="例）動画が再生できませんでした（iPhone/Safari）"></textarea>
+  <div class="bb"><button class="c" id="bugC">閉じる</button><button class="s" id="bugS">送信する</button></div>
+  <div class="done" id="bugD">届きました。ありがとうございます。すぐ確認します。</div>
+</div></div>
+<script>
+(function(){
+var U="https://inrvprlyobghviklulcv.supabase.co/rest/v1/ailab_notes";
+var K="sb_publishable_ZrCNcsRHMci-l7Fns8QtIA_X22XZGJp";
+var M=document.getElementById("bugM");
+document.getElementById("bugL").onclick=function(){ M.classList.add("on"); };
+document.getElementById("bugC").onclick=function(){ M.classList.remove("on"); document.getElementById("bugD").style.display="none"; };
+document.getElementById("bugS").onclick=function(){
+  var t=document.getElementById("bugT").value.trim();
+  if(!t){ document.getElementById("bugT").focus(); return; }
+  var btn=this; btn.disabled=true;
+  fetch(U,{method:"POST",headers:{apikey:K,Authorization:"Bearer "+K,"Content-Type":"application/json"},
+    body:JSON.stringify({member_id:"bug_archive",member_name:"アーカイブページ｜guest",mood:"バグ報告",worry:t,want:location.href.slice(0,180)+" ／ "+navigator.userAgent.slice(0,140)})})
+    .then(function(){
+      document.getElementById("bugD").style.display="block";
+      document.getElementById("bugT").value=""; btn.disabled=false;
+      setTimeout(function(){ M.classList.remove("on"); document.getElementById("bugD").style.display="none"; },1800);
+    }).catch(function(){ btn.disabled=false; alert("送信できませんでした。通信環境をご確認ください。"); });
+};
+})();
+</script>
+</body>
+</html>
